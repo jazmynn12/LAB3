@@ -51,8 +51,7 @@ public:
         }
         ++count;
     }
-    void addCurrency(Currency * curr) { 
-       // std:: cout << "THIS METHOD IS IN USE\n"; 
+    void addCurrency(Currency * curr) { //adds new Linknode object automatically to the end of the list 
         LinkNode* newNode = new LinkNode(curr);
         if(start==nullptr){ 
             start = newNode; 
