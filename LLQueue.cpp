@@ -7,7 +7,6 @@ public:
     ~LLQueue() {}; 
 
     void enqueue( Currency * currency) {
-       // std::cout<< currency->toString() << " currency \n"; 
         addCurrency(currency);
     }
 
