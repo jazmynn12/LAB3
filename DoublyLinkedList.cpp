@@ -23,7 +23,6 @@ public:
             throw std::out_of_range("Index out of range");
         }
         LinkNode* newNode = new LinkNode(curr);
-    //    std::cout << newNode->getData()->toString() << std::endl; 
         if (index == 0) {
             newNode->setNext(start); 
             if (start != nullptr) {
@@ -131,9 +130,7 @@ public:
         if (index < 0 || index >= count) {
             throw std::out_of_range("Index out of range");
         }
-      //  std::cout << "STILL RUNNING1\n" << start->getData()->toString(); 
         LinkNode* current = start;
-      //  std::cout << "STILL RUNNING2\n"; 
         for (int i = 0; i < index; ++i) {
             current = current->getNext();
         }
