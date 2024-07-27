@@ -1,5 +1,16 @@
+/**
+*Lab Number: 3
+*Name: Mira Haldar and Jazmyne Newman
+* This program will hold a pointer to an instance of the Currency class, point to the next and previous node in the doubly linked list 
+*/
+
 #include "currency.cpp"
 #pragma once
+
+/** pre : data - holds pointer to an instance of the Currency class
+*         next : points to next node in the list
+*         prev : points to previous node in the list
+*/
 class LinkNode {
 private:
     Currency * data;
@@ -38,4 +49,5 @@ public:
         prev = p;
     }
 };
-
+ /* post : used in conjuction w/ DoubleLinkedList class to manage collection on LinkNode objects
+*/
