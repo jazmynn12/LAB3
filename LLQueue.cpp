@@ -15,23 +15,23 @@ public:
 /*post : queue is destroyed and memory is released */
 
 /*pre : a valid Currency object is provided
- *post : add object to list
+ *post : add object to end of queue 
 */
 
     void enqueue( Currency * currency) {
         addCurrency(currency);
     }
-/* post : remove object from list*/
+/* post : remove and returns object from front of queue*/
     Currency * dequeue() {
         return removeCurrency(0);
     }
 /*  pre : queue not empty
-    post : returns 1st node in list*/
+    post : returns copy of 1st node in queue*/
     Currency * peekFront() {
         return getCurrency(0);
     }
 /*  pre : queue not empty
-    post : returns last node in list*/
+    post : returns copy of last node in queue*/
     Currency * peekRear() {
         return getEnd()->getData();
     }
