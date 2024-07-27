@@ -1,5 +1,5 @@
 /** 
- *Lab Number: 
+ *Lab Number: 3
  *Name: Mira Haldar and Jazmyne Newman
  *This file utilizes the LinkNode, DoublyLinkedNode, LLStack and LLQueue file to perform 
  operation
