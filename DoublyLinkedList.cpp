@@ -1,8 +1,18 @@
+/*Lab Number: 3
+ *Name: Mira Haldar and Jazmyne Newman
+* This program will uses the LinkNode and Currency class to present list
+*/
+
 #include "currency.cpp"
 #include "LinkNode.cpp"
 #pragma once 
+
 class DoublyLinkedList {
 private:
+
+/*pre : count - keeps track of number of nodes in the list, start - a pointer to the first node and 
+end - a point to the last node in the list*/
+
     int count;
     LinkNode* start;
     LinkNode* end;
@@ -10,13 +20,19 @@ private:
 public:
     DoublyLinkedList() : count(0), start(nullptr), end(nullptr) {}
 
+/*post : initializes an empty list with the count set to 0, start and end set to nullptr
+*/
     ~DoublyLinkedList() {
         while (start != nullptr) {
             LinkNode* temp = start;
             start = start->getNext();
             delete temp;
-        }
+        } 
+        /*post : deallocates all node in the ~DoublyLinkedList
+        */
     }
+/*pre : currency object and valid index
+*/
 
     void addCurrency(Currency * curr, int index) {
         if (index < 0 || index > count) {
@@ -51,6 +67,8 @@ public:
         }
         ++count;
     }
+/*post : adds the currency onject to the list at a specific index
+*/
     void addCurrency(Currency * curr) { //adds new Linknode object automatically to the end of the list 
         LinkNode* newNode = new LinkNode(curr);
         if(start==nullptr){ 
@@ -63,6 +81,8 @@ public:
         end = newNode;
         count++; 
     }
+/*pre : currency object exists in the list
+*/
     Currency * removeCurrency(Currency * currency) {
         LinkNode* current = start;
         while (current != nullptr) {
@@ -86,7 +106,10 @@ public:
         }
         throw std::invalid_argument("Currency not found");
     }
-
+/*pre : valid index (0 <= index < count)
+*/
+/*post : removes currency object at a specific index and returns a copy
+*/
     Currency * removeCurrency(int index) {
         if (index < 0 || index >= count) {
             throw std::out_of_range("Index out of range");
@@ -110,7 +133,10 @@ public:
         --count;
         return removedCurrency;
     }
-
+/*pre : currency object exists in list
+*/
+/*post : returns the index of the specific Currency object in the list, or -1 if not found
+*/
     int findCurrency(Currency * currency) {
         LinkNode* current = start;
         int index = 0;
@@ -123,7 +149,10 @@ public:
         }
         return -1; // Currency not found
     }
-
+/*pre : valid index (0 <= index < count)
+*/
+/*post : returns Currency object at specific index
+*/
     Currency * getCurrency(int index) {
         std::cout <<index << " METHOD IN USE: \n"; 
         if (index < 0 || index >= count) {
@@ -138,6 +167,10 @@ public:
     LinkNode * getEnd() { 
         return end; 
     }
+
+/*post : returns a string of all Currency objects in list, tab spaced
+*/
+
     std::string printList() {
         std::string list;
         LinkNode* current = start;
@@ -147,6 +180,8 @@ public:
         }
         return list;
     }
+
+/*post : returns number of nodesbin the list*/
     int getCount(){ 
         LinkNode * h = start; 
         int length = 0; 
